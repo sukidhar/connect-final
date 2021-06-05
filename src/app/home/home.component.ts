@@ -87,7 +87,7 @@ export class HomeComponent implements OnInit {
   initProp(value:any):void{
     this.peer = new Peer(value.uid,{
       secure:true,
-      host:"https://mad-project-android.herokuapp.com/",
+      host:"mad-project-android.herokuapp.com",
       port: 443,
     });
     this.listen(value);
@@ -110,7 +110,7 @@ export class HomeComponent implements OnInit {
         this.mainVideo.srcObject = stream;
         this.mainVideo.muted = true;
         this.myStream = stream;
-        this.addUserToVideoQueue("username","testerId",stream);
+        this.addUserToVideoQueue(data.userName,data.uid,stream);
       }
 
       this.peer.on('call', (call : any) => {
