@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.static("./dist/connect-final"))
 
-app.get('/' , (req , res)=>{
+app.all('/*' , (req , res)=>{
    res.sendFile('index.html',{root:'dist/connect-final'})
 })
 
