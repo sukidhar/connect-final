@@ -85,7 +85,11 @@ export class HomeComponent implements OnInit {
   }
 
   initProp(value:any):void{
-    this.peer = new Peer(value.uid);
+    this.peer = new Peer(value.uid,{
+      secure:true,
+      host:"https://mad-project-android.herokuapp.com/",
+      port: 443,
+    });
     this.listen(value);
     this.username = value.userName;
   }
